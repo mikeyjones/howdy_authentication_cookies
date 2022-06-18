@@ -34,7 +34,7 @@ pub fn new_with_config(cookie_config: CookieConfig) {
     None -> Nil
   }
 
-  case cookie_config.data_storage {
+  case cookie_config.session_storage {
     Some(storage) -> {
       ets.insert(SessionFuncEts, #("insert", storage.insert))
       ets.insert(SessionFuncEts, #("lookup", storage.lookup))
